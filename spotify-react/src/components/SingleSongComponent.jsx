@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Col, Image, Row } from 'react-bootstrap'
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { addFavouriteSong, playSong, removeFavouriteSong } from '../redux/actions/actions'
 

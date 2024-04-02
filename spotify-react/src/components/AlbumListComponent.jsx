@@ -11,7 +11,6 @@ export default function AlbumListComponent({artist}) {
     let arrayAlbum=[]
 
     useEffect(()=>{
-        arrayAlbum=[]
 
         axios.get(artistUrl + artist.id + '/top?limit=50')
         .then(response => {

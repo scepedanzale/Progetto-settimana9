@@ -11,7 +11,7 @@ export default function SingleAlbumComponent({id}) {
 
     useEffect(()=>{
         dispatch(getAlbum(id))  // chiamata artista
-    }, [id])
+    }, [id, dispatch])
 
     const album = useSelector(state=> state.album[0])
     console.log(album)
