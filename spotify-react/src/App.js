@@ -21,6 +21,7 @@ function App() {
                 <Col xs={12} id="main-col" className='overflow-auto pb-5 scroll-bar'>
                   <Routes>
                     <Route path='/' element={<HomePage/>}/>
+                    <Route path='*' element={<HomePage/>}/>
                     <Route path='/artist/:id' element={<ArtistPage/>}/>
                     <Route path='/album/:id'element={<AlbumPage/>}/>
                     <Route path='/search'element={<SearchResultPage/>}/>
