@@ -13,21 +13,21 @@ export default function ArtistComponent({id}) {
     
     useEffect(()=>{
         dispatch(getArtist(id))  // chiamata artista
-        topSongsFunc()   // chiamata alle top songs
-    }, [id])
-
-    const artist = useSelector(state => state.artist)
-    
-    const [topSongs, setTopSongs] = useState([])
-
-    const topSongsFunc = () => {
+        // chiamata alle top songs
         axios.get(artistUrl + id + '/top?limit=5')
         .then(response => {
             if(response.status === 200){
                 setTopSongs(response.data.data)
             }
         })
-    }
+    }, [id, dispatch])
+
+    const artist = useSelector(state => state.artist)
+    
+    const [topSongs, setTopSongs] = useState([])
+
+    
+    
 
   return (
     artist[0] &&

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { artistUrl } from '../config/config'
-import { Row, Col, Image } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import CardComponent from './CardComponent'
 
 export default function AlbumListComponent({artist}) {
@@ -13,17 +12,17 @@ export default function AlbumListComponent({artist}) {
 
     useEffect(()=>{
         arrayAlbum=[]
-        songsFunc()
-    }, [artist])
 
-    const songsFunc = () => {
         axios.get(artistUrl + artist.id + '/top?limit=50')
         .then(response => {
             if(response.status === 200){
                 setSongs(response.data.data)
             }
         })
-    }
+    }, [artist])
+
+   
+    
 
   return (
     <Row className='bg-dark' >
